@@ -2,4 +2,4 @@
     <Image src="res://icon" stretch="none"  height="50" cssClass="infoWindowImage" />
     <Label text="Current Location" cssClass="title"  />
     <Label text="{{position.latitude + ',' + position.longitude}}" cssClass="infoWindowCoordinates"  />
-</StackLayout>'
+</StackLayout>

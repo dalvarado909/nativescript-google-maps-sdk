@@ -115,6 +115,7 @@ declare module "nativescript-google-maps-sdk" {
         public _map: any;
         public ios: any;
         public android: any;
+        public infoWindowTemplate: string;
     }
 
     export class Shape {
