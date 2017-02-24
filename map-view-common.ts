@@ -1,4 +1,4 @@
-import { MapView as IMapView, Position as IPosition, Marker as IMarker, Shape as IShape, Polyline as IPolyline, Polygon as IPolygon, Circle as ICircle, Camera, MarkerEventData, ShapeEventData, CameraEventData, PositionEventData } from ".";
+import { MapView as IMapView, Position as IPosition, Marker as IMarker, Shape as IShape, Polyline as IPolyline, Polygon as IPolygon, Circle as ICircle, Camera, MarkerEventData, ShapeEventData, CameraEventData, PositionEventData, Bounds as IBounds } from ".";
 import { View, Template } from "ui/core/view";
 import { Image } from "ui/image";
 import builder = require("ui/builder");
@@ -140,6 +140,8 @@ export abstract class MapView extends View implements IMapView {
 
     public abstract updateCamera(): void;
 
+    public abstract setViewport(b: IBounds, p?: number): void;
+
     public abstract updatePadding(): void;
 
     notifyMapReady() {
@@ -236,6 +238,11 @@ export abstract class MapView extends View implements IMapView {
 export class Position implements IPosition {
     public latitude: number;
     public longitude: number;
+}
+
+export class Bounds implements IBounds {
+    public northeast: Position;
+    public southwest: Position;
 }
 
 export class Marker implements IMarker {
